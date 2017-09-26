@@ -198,6 +198,11 @@ def handle_comments(comments):
     number_usable = 0
     for videoId in ids:
       print "videoId: " + videoId
+      
+      #check for rickroll
+      if videoId in ['dQw4w9WgXcQ', 'oHg5SJYRHA0']:
+        continue
+      
       info = youtube.info(videoId, "id,snippet,statistics,contentDetails")
       if info is None:
         continue
